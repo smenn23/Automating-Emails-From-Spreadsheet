@@ -35,11 +35,7 @@ function sendMail() {
   for(let i = 3; SpreadsheetApp.getActiveSheet().getRange(i,1).getValue() != ''; i++) {
     currRow = SpreadsheetApp.getActiveSheet().getRange(i,1,1,SpreadsheetApp.getActiveSheet().getLastColumn());
     var htmlBody = getEmailHtml(currRow,monthcol,monthNames);
-    if(i < 14) {
-      MailApp.sendEmail("sethm923@gmail.com","Tester mail", 'failure', {htmlBody: htmlBody});
-    }
-    console.log(i + 'email sent');
-    //MailApp.sendEmail("sethm923@gmail.com","Tester mail", 'failure', {htmlBody: htmlBody});
+    MailApp.sendEmail("sethm923@gmail.com","Hours Confirmation", 'failure', {htmlBody: htmlBody});
   }
   
 }
